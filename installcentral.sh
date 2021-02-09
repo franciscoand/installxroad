@@ -7,11 +7,12 @@ sudo adduser central
 #sudo passwd central
 # Establecer la configuración regional del sistema operativo
 # Agregar la siguiente linea al archivo de entorno: LC_ALL=en_US.UTF-8
-sudo nano /etc/environment
-#LC_ALL=en_US.UTF-8
+#sudo nano /etc/environment
+sudo echo 'LC_ALL=en_US.UTF-8' >> environment
 # Agregar carpeta con archivos compilados al archivo del repositorio de UBUNTU.  Poner siguiente linea al inicio:
 # deb [trusted=yes] file:///home/ubuntu/ubuntu18.04
-sudo nano /etc/apt/sources.list
+#sudo nano /etc/apt/sources.list
+sudo echo 'deb [trusted=yes] file:///home/ubuntu/ubuntu18.04' >> /etc/apt/sources.list
 # Descargar compilados
 wget https://github.com/andcolombia/XROAD-CO/releases/download/6.24.1-CO-Ubuntu/ubuntu18.04.zip
 # Descomprimir compilados
