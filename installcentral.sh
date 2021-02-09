@@ -21,25 +21,30 @@ unzip ubuntu18.04.zip
 # Ingresar a carpeta de compilados
 cd ubuntu18.04
 # Leer compilados
-sudo apt-get install dpkg-dev
+#sudo apt-get install dpkg-dev
+sudo apt-get --assume-yes install dpkg-dev
 # Leer compilados y crear resumen
 dpkg-scanpackages . >Packages
-sudo apt install acl curl apt-transport-https locales aptitude software-properties-common
+#sudo apt install acl curl apt-transport-https locales aptitude software-properties-common
+sudo apt --assume-yes install acl curl apt-transport-https locales aptitude software-properties-common
 # Actualizar
 sudo apt-get update
 #  Asegurarse de que ls
 #los paquetes locales y software-properties-common estan presentes
-sudo apt-get install locales software-properties-common
+#sudo apt-get install locales software-properties-common
+sudo apt-get --assume-yes install locales software-properties-common
 # Instalar los paquetes de posgresql (Cliente y Servidor)
 #sudo apt install postgresql postgresql-contrib
 # Agregar repositorio de paquetes Java
 curl https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
 sudo apt-add-repository -y "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb $(lsb_release -sc) main"
 # Instalar JRE y fijarlo como la version de Java JDK 8 por defecto
-sudo apt install adoptopenjdk-8-hotspot-jre
+#sudo apt install adoptopenjdk-8-hotspot-jre
+sudo apt --assume-yes install adoptopenjdk-8-hotspot-jre
 sudo update-java-alternatives -s adoptopenjdk-8-hotspot-jre-amd64
 # Actualizar nuevamente, antes de instalar
 sudo apt-get update
 # Instalar el servidor central
-sudo apt-get install xroad-centralserver
+#$sudo apt-get install xroad-centralserver
+sudo apt-get --assume-yes install xroad-centralserver
 #sudo apt install xroad-centralserver
