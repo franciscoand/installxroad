@@ -1,7 +1,6 @@
 # http://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/ig-cs_x-road_6_central_server_installation_guide.md
 # Preparar el sistema operativo
 # Agregar usuario y asignar clave
-sudo su
 sudo adduser central
 #sudo useradd central
 #Introducir clave luego de esta instruccion
