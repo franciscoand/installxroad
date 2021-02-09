@@ -15,7 +15,8 @@ sudo nano /etc/apt/sources.list
 # Descargar compilados
 wget https://github.com/andcolombia/XROAD-CO/releases/download/6.24.1-CO-Ubuntu/ubuntu18.04.zip
 # Descomprimir compilados
-unzip compilados-20201224T152509Z-001.zip
+#unzip compilados-20201224T152509Z-001.zip
+unzip ubuntu18.04.zip
 # Ingresar a carpeta de compilados
 cd ubuntu18.04
 # Leer compilados
@@ -23,7 +24,8 @@ sudo apt-get install dpkg-dev
 sudo apt install acl curl apt-transport-https locales aptitude software-properties-common
 # Actualizar
 sudo apt-get update
-#  Asegurarse de que los paquetes locales y software-properties-common estan presentes
+#  Asegurarse de que ls
+los paquetes locales y software-properties-common estan presentes
 sudo apt-get install locales software-properties-common
 # Instalar los paquetes de posgresql (Cliente y Servidor)
 #sudo apt install postgresql postgresql-contrib
