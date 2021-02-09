@@ -1,4 +1,5 @@
 # https://x-tee.ee/docs/test/xroad/ig-ss_x-road_v6_security_server_installation_guide.html
+# Nota: Ingrese como Root con la instruccion: sudo su
 # Preparar el sistema operativo
 # Agregar usuario y asignar clave
 sudo adduser seguridad
@@ -16,6 +17,8 @@ sudo echo 'LC_ALL=en_US.UTF-8' >> /etc/environment
 tac /etc/apt/sources.list > /tmp/temp; echo "deb [trusted=yes] file:///home/ubuntu/ubuntu18.04 ./" >> /tmp/temp; tac /tmp/temp > /etc/apt/sources.list
 # Descargar compilados
 wget https://github.com/andcolombia/XROAD-CO/releases/download/6.24.1-CO-Ubuntu/ubuntu18.04.zip
+#De ser necesario instalar la herramienta unzip
+sudo apt install unzip
 # Descomprimir compilados
 unzip ubuntu18.04.zip
 # Ingresar a carpeta de compilados
@@ -35,5 +38,6 @@ sudo locale-gen en_US.UTF-8
 # Actualizar
 sudo apt-get update
 # Instalar el servidor de seguridad
+#sudo apt-get install xroad-securityserver
 sudo apt-get --assume-yes install xroad-securityserver
 # sudo apt install xroad-securityserver

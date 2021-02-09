@@ -1,6 +1,8 @@
 # http://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/ig-cs_x-road_6_central_server_installation_guide.md
 # Preparar el sistema operativo
 # Agregar usuario y asignar clave
+# Script opcional para automatizar la instalacion
+# Detectar error por cada linea
 sudo adduser central
 #sudo useradd central
 #Introducir clave luego de esta instruccion
@@ -15,10 +17,17 @@ sudo echo 'LC_ALL=en_US.UTF-8' >> /etc/environment
 #sudo nano /etc/apt/sources.list
 #sudo echo 'deb [trusted=yes] file:///home/ubuntu/ubuntu18.04' ./ >> /etc/apt/sources.list
 # Agregar linea al principio
-sed -i 'deb [trusted=yes] file:///home/ubuntu/ubuntu18.04 ./'
-# Descargar compilados
+#sed -i 'deb [trusted=yes] file:///home/ubuntu/ubuntu18.04 ./' /etc/apt/sources.list
+#sed -i '3s/.*/deb [trusted=yes] file:///home/ubuntu/ubuntu18.04 .//' /etc/apt/sources.list
+# Reemplace /home/ubuntu/ubuntu18.04 por la ubicacion que tendra la carpeta descomprimida
+tac /etc/apt/sources.list > /tmp/temp; echo "deb [trusted=yes] file:///home/ubuntu/ubuntu18.04 ./" >> /tmp/temp; tac /tmp/temp > /etc/apt/sources.list
+
+
+# Descargar compilados, asegurese de introducir la ubicacion correcta de los archivos
 wget https://github.com/andcolombia/XROAD-CO/releases/download/6.24.1-CO-Ubuntu/ubuntu18.04.zip
-# Descomprimir compilados
+# Descomprimir compilados, asegurese de introducir el nombre correcto.
+#De ser necesario instalar la herramienta unzip
+sudo apt install unzip
 #unzip compilados-20201224T152509Z-001.zip
 unzip ubuntu18.04.zip
 # Ingresar a carpeta de compilados
@@ -51,3 +60,4 @@ sudo apt-get update
 #$sudo apt-get install xroad-centralserver
 sudo apt-get --assume-yes install xroad-centralserver
 #sudo apt install xroad-centralserver
+
