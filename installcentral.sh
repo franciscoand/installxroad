@@ -11,11 +11,11 @@ sudo adduser central
 # Agregar linea al final
 sudo echo 'LC_ALL=en_US.UTF-8' >> /etc/environment
 # Agregar carpeta con archivos compilados al archivo del repositorio de UBUNTU.  Poner siguiente linea al inicio:
-# deb [trusted=yes] file:///home/ubuntu/ubuntu18.04
+# deb [trusted=yes] file:///home/ubuntu/ubuntu18.04 ./
 #sudo nano /etc/apt/sources.list
-#sudo echo 'deb [trusted=yes] file:///home/ubuntu/ubuntu18.04' >> /etc/apt/sources.list
+#sudo echo 'deb [trusted=yes] file:///home/ubuntu/ubuntu18.04' ./ >> /etc/apt/sources.list
 # Agregar linea al principio
-sed -i 'deb [trusted=yes] file:///home/ubuntu/ubuntu18.04' /etc/apt/sources.list
+sed -i 'deb [trusted=yes] file:///home/ubuntu/ubuntu18.04 ./'
 # Descargar compilados
 wget https://github.com/andcolombia/XROAD-CO/releases/download/6.24.1-CO-Ubuntu/ubuntu18.04.zip
 # Descomprimir compilados
