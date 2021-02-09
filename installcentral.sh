@@ -21,11 +21,13 @@ unzip ubuntu18.04.zip
 cd ubuntu18.04
 # Leer compilados
 sudo apt-get install dpkg-dev
+# Leer compilados y crear resumen
+dpkg-scanpackages . >Packages
 sudo apt install acl curl apt-transport-https locales aptitude software-properties-common
 # Actualizar
 sudo apt-get update
 #  Asegurarse de que ls
-los paquetes locales y software-properties-common estan presentes
+#los paquetes locales y software-properties-common estan presentes
 sudo apt-get install locales software-properties-common
 # Instalar los paquetes de posgresql (Cliente y Servidor)
 #sudo apt install postgresql postgresql-contrib
